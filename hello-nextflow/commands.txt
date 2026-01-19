@@ -1,0 +1,37 @@
+    1  pwd
+    2  cd hello-nextflow
+    3  cat output.txt
+    4  ls
+    5  nextflow run hello-world.nf
+    6  cat output.txt
+    7  ls
+    8  cat output.txt
+    9  cat results/output.txt
+   10* code results/output.txt 
+   11  tree -a work/
+   12  nextflow log
+   13  nextflow run hello-world.nf -resume
+   14  nextflow log
+   15  tree -a work/
+   16  nexflow clean small_descartes -n
+   17  next flow clean small_descartes -n
+   18  nextflow clean small_descartes -n
+   19  nextflow log
+   20  tree work/
+   21  tree work/ -a
+   22  nextflow clean small_descartes -f
+   23  nextflow log
+   24  tres work/ -a
+   25  tree work/ -a
+   26  rm -r work
+   27  ls results/
+   28  nextflow run hello-world-params.nf 
+   29  nextflow run hello-world-params.nf --greeting "Hello using params"
+   30  cat results_params/output_params.txt
+   31  nextflow run hello-world-params.nf --greeting 
+   32  cat results_params/output_params.txt
+   33  nextflow run hello-world-params.nf 
+   34  cat results_params/output_params.txt
+   35  history -a
+   36  cat ~/.bash_history
+   37  history > commands.txt

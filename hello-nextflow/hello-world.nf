@@ -5,12 +5,14 @@
  */
 process sayHello {
 
+    publishDir "results", mode: "copy"
+
     output:
         path 'output.txt'
 
     script:
     """
-    echo 'Hello World!' > output.txt
+    echo 'Hello World! - Using publishDir' > output.txt
     """
 }
 

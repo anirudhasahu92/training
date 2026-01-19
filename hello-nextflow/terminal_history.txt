@@ -1,0 +1,302 @@
+training -> pwd
+/workspaces/training
+training -> cd hello-nextflow
+training/hello-nextflow -> cat output.txt
+Hello world
+training/hello-nextflow -> ls
+greetings.csv      hello-config.nf      hello-modules.nf   hello-world.nf   output.txt  solutions         work
+hello-channels.nf  hello-containers.nf  hello-workflow.nf  nextflow.config  results     test-params.json
+training/hello-nextflow -> nextflow run hello-world.nf
+Nextflow 25.10.2 is available - Please consider updating your version to it
+
+ N E X T F L O W   ~  version 25.04.3
+
+Launching `hello-world.nf` [elated_chandrasekhar] DSL2 - revision: 8e7b1bcc10
+
+executor >  local (1)
+[a7/055349] sayHello | 1 of 1 ✔
+
+training/hello-nextflow -> cat output.txt
+Hello world
+training/hello-nextflow -> ls
+greetings.csv      hello-config.nf      hello-modules.nf   hello-world.nf   output.txt  solutions         work
+hello-channels.nf  hello-containers.nf  hello-workflow.nf  nextflow.config  results     test-params.json
+training/hello-nextflow -> cat output.txt
+Hello world
+training/hello-nextflow -> cat results/output.txt
+Hello World! - Using publishDir
+training/hello-nextflow -> code results/output.txt
+training/hello-nextflow -> tree -a work/
+work/
+├── 29
+│   └── 40507597a225cbb535760ed41c331e
+│       ├── .command.begin
+│       ├── .command.err
+│       ├── .command.log
+│       ├── .command.out
+│       ├── .command.run
+│       ├── .command.sh
+│       ├── .exitcode
+│       └── output.txt
+├── a7
+│   └── 055349d9804bbfef16c36c01bdab63
+│       ├── .command.begin
+│       ├── .command.err
+│       ├── .command.log
+│       ├── .command.out
+│       ├── .command.run
+│       ├── .command.sh
+│       ├── .exitcode
+│       └── output.txt
+└── cd
+    └── c7d14fba92fe1999c23a19d719d729
+        ├── .command.begin
+        ├── .command.err
+        ├── .command.log
+        ├── .command.out
+        ├── .command.run
+        ├── .command.sh
+        ├── .exitcode
+        └── output.txt
+
+6 directories, 24 files
+training/hello-nextflow -> nextflow log
+TIMESTAMP               DURATION        RUN NAME                STATUS  REVISION ID     SESSION ID                            COMMAND
+2026-01-16 19:42:22     2.2s            small_descartes         OK      c33d41f479      fb3694c3-72d5-4907-9acc-dc8d5d681b6e  nextflow run hello-world.nf
+2026-01-17 14:24:25     1.5s            chaotic_shockley        OK      8e7b1bcc10      2af6123a-1afb-41b4-92cb-68e5047c1a27  nextflow run hello-world.nf
+2026-01-19 00:55:49     1.7s            elated_chandrasekhar    OK      8e7b1bcc10      6d5b9d82-e42d-4df4-82d3-28eea310ebd8  nextflow run hello-world.nf
+training/hello-nextflow -> nextflow run hello-world.nf -resume
+Nextflow 25.10.2 is available - Please consider updating your version to it
+
+ N E X T F L O W   ~  version 25.04.3
+
+Launching `hello-world.nf` [chaotic_brazil] DSL2 - revision: 8e7b1bcc10
+
+[a7/055349] sayHello | 1 of 1, cached: 1 ✔
+
+training/hello-nextflow -> nextflow log
+TIMESTAMP               DURATION        RUN NAME                STATUS  REVISION ID     SESSION ID                            COMMAND
+2026-01-16 19:42:22     2.2s            small_descartes         OK      c33d41f479      fb3694c3-72d5-4907-9acc-dc8d5d681b6e  nextflow run hello-world.nf
+2026-01-17 14:24:25     1.5s            chaotic_shockley        OK      8e7b1bcc10      2af6123a-1afb-41b4-92cb-68e5047c1a27  nextflow run hello-world.nf
+2026-01-19 00:55:49     1.7s            elated_chandrasekhar    OK      8e7b1bcc10      6d5b9d82-e42d-4df4-82d3-28eea310ebd8  nextflow run hello-world.nf
+2026-01-19 01:09:03     1.4s            chaotic_brazil          OK      8e7b1bcc10      6d5b9d82-e42d-4df4-82d3-28eea310ebd8  nextflow run hello-world.nf -resume
+training/hello-nextflow -> tree -a work/
+work/
+├── 29
+│   └── 40507597a225cbb535760ed41c331e
+│       ├── .command.begin
+│       ├── .command.err
+│       ├── .command.log
+│       ├── .command.out
+│       ├── .command.run
+│       ├── .command.sh
+│       ├── .exitcode
+│       └── output.txt
+├── a7
+│   └── 055349d9804bbfef16c36c01bdab63
+│       ├── .command.begin
+│       ├── .command.err
+│       ├── .command.log
+│       ├── .command.out
+│       ├── .command.run
+│       ├── .command.sh
+│       ├── .exitcode
+│       └── output.txt
+└── cd
+    └── c7d14fba92fe1999c23a19d719d729
+        ├── .command.begin
+        ├── .command.err
+        ├── .command.log
+        ├── .command.out
+        ├── .command.run
+        ├── .command.sh
+        ├── .exitcode
+        └── output.txt
+
+6 directories, 24 files
+training/hello-nextflow -> nexflow clean small_descartes -n
+bash: nexflow: command not found
+training/hello-nextflow -> next flow clean small_descartes -n
+bash: next: command not found
+training/hello-nextflow -> nextflow clean small_descartes -n
+Would remove /workspaces/training/hello-nextflow/work/29/40507597a225cbb535760ed41c331e
+training/hello-nextflow -> nextflow log
+TIMESTAMP               DURATION        RUN NAME                STATUS  REVISION ID     SESSION ID                            COMMAND
+2026-01-16 19:42:22     2.2s            small_descartes         OK      c33d41f479      fb3694c3-72d5-4907-9acc-dc8d5d681b6e  nextflow run hello-world.nf
+2026-01-17 14:24:25     1.5s            chaotic_shockley        OK      8e7b1bcc10      2af6123a-1afb-41b4-92cb-68e5047c1a27  nextflow run hello-world.nf
+2026-01-19 00:55:49     1.7s            elated_chandrasekhar    OK      8e7b1bcc10      6d5b9d82-e42d-4df4-82d3-28eea310ebd8  nextflow run hello-world.nf
+2026-01-19 01:09:03     1.4s            chaotic_brazil          OK      8e7b1bcc10      6d5b9d82-e42d-4df4-82d3-28eea310ebd8  nextflow run hello-world.nf -resume
+training/hello-nextflow -> tree work/
+work/
+├── 29
+│   └── 40507597a225cbb535760ed41c331e
+│       └── output.txt
+├── a7
+│   └── 055349d9804bbfef16c36c01bdab63
+│       └── output.txt
+└── cd
+    └── c7d14fba92fe1999c23a19d719d729
+        └── output.txt
+
+6 directories, 3 files
+training/hello-nextflow -> tree work/ -a
+work/
+├── 29
+│   └── 40507597a225cbb535760ed41c331e
+│       ├── .command.begin
+│       ├── .command.err
+│       ├── .command.log
+│       ├── .command.out
+│       ├── .command.run
+│       ├── .command.sh
+│       ├── .exitcode
+│       └── output.txt
+├── a7
+│   └── 055349d9804bbfef16c36c01bdab63
+│       ├── .command.begin
+│       ├── .command.err
+│       ├── .command.log
+│       ├── .command.out
+│       ├── .command.run
+│       ├── .command.sh
+│       ├── .exitcode
+│       └── output.txt
+└── cd
+    └── c7d14fba92fe1999c23a19d719d729
+        ├── .command.begin
+        ├── .command.err
+        ├── .command.log
+        ├── .command.out
+        ├── .command.run
+        ├── .command.sh
+        ├── .exitcode
+        └── output.txt
+
+6 directories, 24 files
+training/hello-nextflow -> nextflow clean small_descartes -f
+Removed /workspaces/training/hello-nextflow/work/29/40507597a225cbb535760ed41c331e
+training/hello-nextflow -> nextflow log
+TIMESTAMP               DURATION        RUN NAME                STATUS  REVISION ID     SESSION ID                            COMMAND
+2026-01-17 14:24:25     1.5s            chaotic_shockley        OK      8e7b1bcc10      2af6123a-1afb-41b4-92cb-68e5047c1a27  nextflow run hello-world.nf
+2026-01-19 00:55:49     1.7s            elated_chandrasekhar    OK      8e7b1bcc10      6d5b9d82-e42d-4df4-82d3-28eea310ebd8  nextflow run hello-world.nf
+2026-01-19 01:09:03     1.4s            chaotic_brazil          OK      8e7b1bcc10      6d5b9d82-e42d-4df4-82d3-28eea310ebd8  nextflow run hello-world.nf -resume
+training/hello-nextflow -> tres work/ -a
+bash: tres: command not found
+training/hello-nextflow -> tree work/ -a
+work/
+├── 29
+├── a7
+│   └── 055349d9804bbfef16c36c01bdab63
+│       ├── .command.begin
+│       ├── .command.err
+│       ├── .command.log
+│       ├── .command.out
+│       ├── .command.run
+│       ├── .command.sh
+│       ├── .exitcode
+│       └── output.txt
+└── cd
+    └── c7d14fba92fe1999c23a19d719d729
+        ├── .command.begin
+        ├── .command.err
+        ├── .command.log
+        ├── .command.out
+        ├── .command.run
+        ├── .command.sh
+        ├── .exitcode
+        └── output.txt
+
+5 directories, 16 files
+training/hello-nextflow -> rm -r work
+training/hello-nextflow -> ls results/
+output.txt
+training/hello-nextflow -> nextflow run hello-world-params.nf
+Nextflow 25.10.2 is available - Please consider updating your version to it
+
+ N E X T F L O W   ~  version 25.04.3
+
+Launching `hello-world-params.nf` [festering_magritte] DSL2 - revision: 24ef34531b
+
+WARN: Access to undefined parameter `greeting` -- Initialise it to a default value eg. `params.greeting = some_value`
+ERROR ~ A process input channel evaluates to null -- Invalid declaration `val greeting`
+
+ -- Check script 'hello-world-params.nf' at line: 25 or see '.nextflow.log' file for more details
+training/hello-nextflow -> nextflow run hello-world-params.nf --greeting "Hello using params"
+Nextflow 25.10.2 is available - Please consider updating your version to it
+
+ N E X T F L O W   ~  version 25.04.3
+
+Launching `hello-world-params.nf` [cranky_mercator] DSL2 - revision: e1bff1ee6e
+
+executor >  local (1)
+[f4/eb4222] sayHello | 1 of 1 ✔
+
+training/hello-nextflow -> cat results_params/output_params.txt
+Hello using params
+training/hello-nextflow -> nextflow run hello-world-params.nf --greeting
+Nextflow 25.10.2 is available - Please consider updating your version to it
+
+ N E X T F L O W   ~  version 25.04.3
+
+Launching `hello-world-params.nf` [cheesy_booth] DSL2 - revision: 76f6776be4
+
+executor >  local (1)
+[98/d8d149] sayHello | 1 of 1 ✔
+
+training/hello-nextflow -> cat results_params/output_params.txt
+true
+training/hello-nextflow -> nextflow run hello-world-params.nf
+Nextflow 25.10.2 is available - Please consider updating your version to it
+
+ N E X T F L O W   ~  version 25.04.3
+
+Launching `hello-world-params.nf` [dreamy_sanger] DSL2 - revision: 76f6776be4
+
+executor >  local (1)
+[83/225fad] sayHello | 1 of 1 ✔
+
+training/hello-nextflow -> cat results_params/output_params.txt
+Hello from default params variable
+training/hello-nextflow -> history -a
+training/hello-nextflow -> cat ~/.bash_history
+pwd
+cd hello-nextflow
+cat output.txt
+ls
+nextflow run hello-world.nf
+cat output.txt
+ls
+cat output.txt
+cat results/output.txt
+code results/output.txt
+tree -a work/
+nextflow log
+nextflow run hello-world.nf -resume
+nextflow log
+tree -a work/
+nexflow clean small_descartes -n
+next flow clean small_descartes -n
+nextflow clean small_descartes -n
+nextflow log
+tree work/
+tree work/ -a
+nextflow clean small_descartes -f
+nextflow log
+tres work/ -a
+tree work/ -a
+rm -r work
+ls results/
+nextflow run hello-world-params.nf
+nextflow run hello-world-params.nf --greeting "Hello using params"
+cat results_params/output_params.txt
+nextflow run hello-world-params.nf --greeting
+cat results_params/output_params.txt
+nextflow run hello-world-params.nf
+cat results_params/output_params.txt
+history -a
+training/hello-nextflow -> history > commands.txt
+training/hello-nextflow -> ls
+commands.txt       hello-config.nf      hello-workflow.nf      nextflow.config  results_params    work
+greetings.csv      hello-containers.nf  hello-world.nf         output.txt       solutions
+hello-channels.nf  hello-modules.nf     hello-world-params.nf  results          test-params.json
+training/hello-nextflow ->
